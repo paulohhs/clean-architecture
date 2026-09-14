@@ -1,5 +1,5 @@
-import CustomerFactory from "../../src/domain/customer/factory/customer.factory";
-import Address from "../../src/domain/customer/value-object/address";
+import CustomerFactory from "../../../src/domain/customer/factory/customer.factory";
+import Address from "../../../src/domain/customer/value-object/address";
 
 describe("Customer factory unit test", () => {
     it("should create a customer", () => {

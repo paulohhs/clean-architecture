@@ -1,9 +1,9 @@
-import CustomerAddressChangedEvent from "../../../../src/domain/customer/event/customer-address-changed.event";
-import CustomerCreatedEvent from "../../../../src/domain/customer/event/customer-created.event";
-import EnviaConsoleLog1Handler from "../../../../src/domain/customer/event/handler/envia-console-log-1.handler";
-import EnviaConsoleLog2Handler from "../../../../src/domain/customer/event/handler/envia-console-log-2.handler";
-import EnviaConsoleLogHandler from "../../../../src/domain/customer/event/handler/envia-console-log.handler";
-import Address from "../../../../src/domain/customer/value-object/address";
+import CustomerAddressChangedEvent from "../../../../../src/domain/customer/event/customer-address-changed.event";
+import CustomerCreatedEvent from "../../../../../src/domain/customer/event/customer-created.event";
+import EnviaConsoleLog1Handler from "../../../../../src/domain/customer/event/handler/envia-console-log-1.handler";
+import EnviaConsoleLog2Handler from "../../../../../src/domain/customer/event/handler/envia-console-log-2.handler";
+import EnviaConsoleLogHandler from "../../../../../src/domain/customer/event/handler/envia-console-log.handler";
+import Address from "../../../../../src/domain/customer/value-object/address";
 
 describe("Enviar console.log unit test", () => {
   afterEach(() => {
