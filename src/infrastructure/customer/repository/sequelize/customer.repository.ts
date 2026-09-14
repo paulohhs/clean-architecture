@@ -1,8 +1,8 @@
 import Customer from "../../../../domain/customer/entity/customer";
 import CustomerModel from "./customer.model";
-import CustomerRepositoryInterface from "../../domain/repository/customer-repository.interface";
 import Address from "../../../../domain/customer/value-object/address";
-import EventDispatcherInterface from "../../domain/@shared/event-dispatcher.interface";
+import CustomerRepositoryInterface from "../../../../domain/customer/repository/customer-repository.interface";
+import EventDispatcherInterface from "../../../../domain/@shared/event/event-dispatcher.interface";
 
 export default class CustomerRepository implements CustomerRepositoryInterface {
     constructor(private eventDispatcher?: EventDispatcherInterface) {}
