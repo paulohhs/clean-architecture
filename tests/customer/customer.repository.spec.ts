@@ -1,11 +1,11 @@
 import { Sequelize } from "sequelize-typescript";
-import CustomerModel from "../../infrastructure/customer/repository/sequelize/customer.model";
-import Customer from "../../domain/customer/entity/customer";
-import CustomerRepository from "../../infrastructure/customer/repository/sequelize/customer.repository";
-import Address from "../../domain/customer/value-object/address";
-import EnviaConsoleLog1Handler from "../../domain/customer/event/handler/envia-console-log-1.handler";
-import EnviaConsoleLogHandler from "../../domain/customer/event/handler/envia-console-log.handler";
-import EventDispatcher from "../../domain/@shared/event/event-dispatcher";
+import CustomerModel from "../../src/infrastructure/customer/repository/sequelize/customer.model";
+import Customer from "../../src/domain/customer/entity/customer";
+import CustomerRepository from "../../src/infrastructure/customer/repository/sequelize/customer.repository";
+import Address from "../../src/domain/customer/value-object/address";
+import EnviaConsoleLog1Handler from "../../src/domain/customer/event/handler/envia-console-log-1.handler";
+import EnviaConsoleLogHandler from "../../src/domain/customer/event/handler/envia-console-log.handler";
+import EventDispatcher from "../../src/domain/@shared/event/event-dispatcher";
 
 describe("Customer repository tests", () => {
     let sequelize: Sequelize;

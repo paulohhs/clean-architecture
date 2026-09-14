@@ -5,7 +5,7 @@
     "emitDecoratorMetadata": true,
     
     // File Layout
-    "rootDir": "./src",
+    "rootDir": ".",
     "outDir": "./dist",
 
     // Environment Settings
@@ -45,6 +45,7 @@
     "skipLibCheck": true,
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "tests/**/*.ts"
   ],
 }

@@ -1,16 +1,16 @@
 import { Sequelize } from "sequelize-typescript";
-import CustomerModel from "../../infrastructure/customer/repository/sequelize/customer.model";
-import Customer from "../../domain/customer/entity/customer";
-import CustomerRepository from "../../infrastructure/customer/repository/sequelize/customer.repository";
-import Address from "../../domain/customer/value-object/address";
-import OrderItemModel from "../../infrastructure/order/repository/sequelize/order-item.model";
-import OrderModel from "../../infrastructure/order/repository/sequelize/order.model";
-import ProductModel from "../../infrastructure/product/repository/sequelize/product.model";
-import ProductRepository from "../../infrastructure/product/repository/sequelize/product.repository";
-import Product from "../../domain/product/entity/product";
-import OrderRepository from "../../infrastructure/order/repository/sequelize/order.repository";
-import OrderItem from "../../domain/checkout/entity/order_item";
-import Order from "../../domain/checkout/entity/order";
+import CustomerModel from "../../src/infrastructure/customer/repository/sequelize/customer.model";
+import Customer from "../../src/domain/customer/entity/customer";
+import CustomerRepository from "../../src/infrastructure/customer/repository/sequelize/customer.repository";
+import Address from "../../src/domain/customer/value-object/address";
+import OrderItemModel from "../../src/infrastructure/order/repository/sequelize/order-item.model";
+import OrderModel from "../../src/infrastructure/order/repository/sequelize/order.model";
+import ProductModel from "../../src/infrastructure/product/repository/sequelize/product.model";
+import ProductRepository from "../../src/infrastructure/product/repository/sequelize/product.repository";
+import Product from "../../src/domain/product/entity/product";
+import OrderRepository from "../../src/infrastructure/order/repository/sequelize/order.repository";
+import OrderItem from "../../src/domain/checkout/entity/order_item";
+import Order from "../../src/domain/checkout/entity/order";
 
 describe("Order repository tests", () => {
   let sequelize: Sequelize;
@@ -373,7 +373,7 @@ describe("Order repository tests", () => {
       include: ["items"],
     });
 
-    expect(orderModel.toJSON()).toStrictEqual({
+    expect(orderModel!.toJSON()).toStrictEqual({
       id: "1",
       customer_id: "1",
       total: orderWithoutItem2.total(),

@@ -1,5 +1,5 @@
-import Order from "../../domain/checkout/entity/order";
-import OrderItem from "../../domain/checkout/entity/order_item";
+import Order from "../../src/domain/checkout/entity/order";
+import OrderItem from "../../src/domain/checkout/entity/order_item";
 
 describe("Order unit tests", () => {
 
