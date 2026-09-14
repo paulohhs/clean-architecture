@@ -1,4 +1,4 @@
-# Repositório utilizado para estudo de DDD (modelagem tática e patterns).
+# Repositório utilizado para estudo de Clean Architecture.
 
 ## Instruções para instalar as dependências necessárias e também para executar os testes:
 
