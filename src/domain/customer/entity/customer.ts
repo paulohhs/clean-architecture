@@ -1,10 +1,11 @@
+import Entity from "../../@shared/entity/entity.abstract";
 import EventInterface from "../../@shared/event/event.interface";
+import NotificationError from "../../@shared/notification/notification.error";
 import CustomerAddressChangedEvent from "../event/customer-address-changed.event";
 import CustomerCreatedEvent from "../event/customer-created.event";
 import Address from "../value-object/address";
 
-export default class Customer {
-    private _id: string;
+export default class Customer extends Entity {
     private _name: string = "";
     private _address!: Address;
     private _active: boolean = false;
@@ -12,17 +13,18 @@ export default class Customer {
     private _events: EventInterface[] = [];
 
     constructor(id: string, name: string) {
-        this._id = id;
+        super(id);
+        this.id = id;
         this._name = name;
         this.validate();
 
-        this._events.push(
-            new CustomerCreatedEvent({ id: this._id, name: this._name })
-        );
-    }
+        if (this.notification.hasErrors()) {
+            throw new NotificationError(this.notification.getErrors());
+        }
 
-    get id(): string {
-        return this._id;
+        this._events.push(
+            new CustomerCreatedEvent({ id: this.id, name: this._name })
+        );
     }
 
     get name(): string {
@@ -50,11 +52,17 @@ export default class Customer {
     }
 
     validate() {
-        if (this._id.length === 0) {
-            throw new Error("ID is required");
+        if (this.id.length === 0) {
+            this.notification.addError({
+                context: "customer",
+                message: "ID is required"
+            });
         }
         if (this._name.length === 0) {
-            throw new Error("Name is required");
+            this.notification.addError({
+                context: "customer",
+                message: "Name is required"
+            });
         }
     }
 
@@ -70,7 +78,7 @@ export default class Customer {
     changeAddress(address: Address): void {
         this._address = address;
         this._events.push(
-            new CustomerAddressChangedEvent({ id: this._id, name: this._name, address: address.toString() })
+            new CustomerAddressChangedEvent({ id: this.id, name: this._name, address: address.toString() })
         );
     }
 
