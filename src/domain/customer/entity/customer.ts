@@ -14,7 +14,6 @@ export default class Customer extends Entity {
 
     constructor(id: string, name: string) {
         super(id);
-        this.id = id;
         this._name = name;
         this.validate();
 
@@ -23,7 +22,7 @@ export default class Customer extends Entity {
         }
 
         this._events.push(
-            new CustomerCreatedEvent({ id: this.id, name: this._name })
+            new CustomerCreatedEvent({ id: this._id, name: this._name })
         );
     }
 
@@ -52,7 +51,7 @@ export default class Customer extends Entity {
     }
 
     validate() {
-        if (this.id.length === 0) {
+        if (this._id.length === 0) {
             this.notification.addError({
                 context: "customer",
                 message: "ID is required"
@@ -78,7 +77,7 @@ export default class Customer extends Entity {
     changeAddress(address: Address): void {
         this._address = address;
         this._events.push(
-            new CustomerAddressChangedEvent({ id: this.id, name: this._name, address: address.toString() })
+            new CustomerAddressChangedEvent({ id: this._id, name: this._name, address: address.toString() })
         );
     }
 
