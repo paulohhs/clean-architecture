@@ -98,7 +98,7 @@ describe("Customer repository tests", () => {
         customer.address = address;
         await customerRepository.create(customer);
 
-        const foundCustomer = await customerRepository.find(customer.id);
+        const foundCustomer = await customerRepository.find(customer.getId());
         
 
         if (!foundCustomer) {

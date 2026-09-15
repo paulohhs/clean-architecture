@@ -8,7 +8,7 @@ const customer = CustomerFactory.createWithAddress(
 );
 
 const input = {
-    id: customer.id,
+    id: customer.getId(),
     name: "John Updated",
     address: {
         street: "Street Updated",
