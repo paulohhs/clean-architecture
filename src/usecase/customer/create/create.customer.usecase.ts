@@ -24,7 +24,7 @@ export default class CreateCustomerUseCase {
             await this.customerRepository.create(customer);
 
             return {
-                id: customer.getId(),
+                id: customer.id,
                 name: customer.name,
                 address: {
                     street: customer.address.street,

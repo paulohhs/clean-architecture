@@ -33,7 +33,7 @@ export default class ProductB extends Entity implements ProductInterface {
 
     validate(): boolean {
         if (this._id.length === 0) {
-            if (this.getId().length === 0) {
+            if (this.id.length === 0) {
                 this.notification.addError({
                     context: "product",
                     message: "ID is required"

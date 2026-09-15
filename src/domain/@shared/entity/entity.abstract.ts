@@ -9,7 +9,7 @@ export default abstract class Entity {
         this.notification = new Notification();
     }
 
-    getId(): string {
+    get id(): string {
         return this._id
     }
 }

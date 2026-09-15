@@ -14,7 +14,8 @@
     "uuid": "^14.0.2"
   },
   "scripts": {
-    "test": "jest",
+    "test": "npm run tsc -- --noEmit && jest",
+    "tsc": "tsc",
     "dev": "nodemon src/infrastructure/api/server.ts"
   },
   "dependencies": {
